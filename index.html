@@ -1,79 +1,218 @@
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
     <title>Cadastro</title>
 </head>
-<body>
-    <header>
-        <h1>Cadastro</h1>
-    </header>
 
-    <div>
-        <form action="">
-            <label for="">Nome:</label>
-            <input type="text">
-            <label for="">Email:</label>
-            <input type="text">
-            <label for="">Data de Nascimento:</label>
-            <input type="text">
-            <label for="">Peso:</label>
-            <input type="text">
-            <label for="">Altura:</label>
-            <input type="text">
-            <button class="submit">Cadastrar</button>
-        </form>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" target="_blank">
+            <img src="./assets/logo_prefeitura.png" alt="Logo" class="nav-logo">
+            <h5 class="user-info"></h5>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login.html">Suas Requisições</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Realizar Requisição</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+
+        <div class="cadast-form">
+            <div class="cadast-header">
+                <h2>Cadastro</h2>
+            </div class="wrapper">
+            <form method="post" action="" class="">
+                <div class="form-group">
+                    <label for="">Nome:</label>
+                    <input type="text" name="nome_aluno" class="" id="aluno" placeholder="Digite aqui.">
+                </div>
+
+                <div class="form-group">
+                    <label for="">E-mail:</label>
+                    <input type="text" name="email" class="" id="senha" placeholder="Digite seu e-mail.">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Data Nasc:</label>
+                    <input type="date" name="data_nasc" class="" id="dt_nasc">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Peso:</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Altura:</label>
+                    <input type="text">
+                </div>
+
+                <button class="submit-cad">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="cadastro">
+            <div class="cadast-header">
+                <h2>Alunos Cadastrados:</h2>
+            </div>
+
+            
+            <br>
+            <table id="tabela-cadastro">
+                <thead class="header-tabela">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Data de Nascimento</th>
+                        <th>Peso</th>
+                        <th>Altura</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <th>Giovano</th>
+                        <th>giovaninho123@email.com</th>
+                        <th>01/12/2003</th>
+                        <th>93kg</th>
+                        <th>1,85</th>
+                    </tr>
+                    <tr>
+                        <th>Alfredo</th>
+                        <th>aluno2@email.com</th>
+                        <th>31/12/2000</th>
+                        <th>78kg</th>
+                        <th>1,75</th>
+                    </tr>
+                    <tr>
+                        <th>Aluno3</th>
+                        <th>aluno3@email.com</th>
+                        <th>10/10/1990</th>
+                        <th>70kg</th>
+                        <th>1,70</th>
+                    </tr>
+                    <tr>
+                        <th>Aluno4</th>
+                        <th>aluno4@email.com</th>
+                        <th>19/02/1940</th>
+                        <th>85kg</th>
+                        <th>1,78</th>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
     </div>
+
     <br>
     <div>
-        <h2>Alunos Cadastrados:</h2>
-        <div>
-            <input type="text">
-            <button>Pesquisar</button>
-        </div>
-        <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Data de Nascimento</th>
-                    <th>Peso</th>
-                    <th>Altura</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Giovano</th>
-                    <th>giovaninho123@email.com</th>
-                    <th>01/12/2003</th>
-                    <th>93kg</th>
-                    <th>1,85</th>
-                </tr>
-                <tr>
-                    <th>Alfredo</th>
-                    <th>aluno2@email.com</th>
-                    <th>31/12/2000</th>
-                    <th>78kg</th>
-                    <th>1,75</th>
-                </tr>
-                <tr>
-                    <th>Aluno3</th>
-                    <th>aluno3@email.com</th>
-                    <th>10/10/1990</th>
-                    <th>70kg</th>
-                    <th>1,70</th>
-                </tr>
-                <tr>
-                    <th>Aluno4</th>
-                    <th>aluno4@email.com</th>
-                    <th>19/02/1940</th>
-                    <th>85kg</th>
-                    <th>1,78</th>
-                </tr>
-            </tbody>
-        </table>
+
     </div>
+    <footer class="footer">
+        Desenvolvido por Grupo de Desenvolvimento Web | Unisal - Lorena, 2024
+    </footer>
+
+    <!-- Link para o JavaScript do Bootstrap (opcional, caso você queira usar componentes interativos) -->
+    <!-- Link para o jQuery (necessário para o Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/Portuguese-Brasil.json"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            const data = [
+                {
+                    Nome: "Giovano",
+                    Email: "giovaninho123@email.com",
+                    Data_Nasc: "01/12/2003",
+                    Peso: "93kg",
+                    Altura: "1,85"
+                },
+                {
+                    Nome: "Alfredo",
+                    Email: "aluno2@email.com",
+                    Data_Nasc: "31/12/2000",
+                    Peso: "78kg",
+                    Altura: "1,75"
+                },
+                {
+                    Nome: "Aluno3",
+                    Email: "aluno3@email.com",
+                    Data_Nasc: "10/10/1990",
+                    Peso: "70kg",
+                    Altura: "1,70"
+                },
+                {
+                    Nome: "Aluno4",
+                    Email: "aluno4@email.com",
+                    Data_Nasc: "19/02/1940",
+                    Peso: "85kg",
+                    Altura: "1,78"
+                }
+            ];
+
+            console.log(data);
+
+
+            $('#tabela-cadastro').DataTable({
+                language: {
+            emptyTable: "Nenhum registro encontrado",
+            info: "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            infoEmpty: "Mostrando 0 até 0 de 0 registros",
+            infoFiltered: "(Filtrados de _MAX_ registros)",
+            infoPostFix: "",
+            thousands: ".",
+            lengthMenu: "_MENU_ resultados por página",
+            loadingRecords: "Carregando...",
+            processing: "Processando...",
+            zeroRecords: "Nenhum registro encontrado",
+            search: "Pesquisar:",
+            paginate: {
+                next: "Próximo",
+                previous: "Anterior",
+                first: "Primeiro",
+                last: "Último"
+            },
+            aria: {
+                "sortAscending": ": Ordenar colunas de forma ascendente",
+                "sortDescending": ": Ordenar colunas de forma descendente"
+            }
+        },
+                data,
+                columns: [
+                    { data: 'Nome' },
+                    { data: 'Email' },
+                    { data: 'Data_Nasc' },
+                    { data: 'Peso' },
+                    { data: 'Altura' }
+
+                ]
+            });
+        });
+    </script>
 
 </body>
+
 </html>
