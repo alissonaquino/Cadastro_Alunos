@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="/Cadastro_Alunos/css/cadastro.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
@@ -35,98 +36,69 @@
         </div>
     </nav>
 
-    <div class="content">
+    <div class="container-fluid">
+        <div class="row ml-5 mt-5 mr-5 ">
 
-        <div class="cadast-form">
-            <div class="cadast-header">
-                <h2>Cadastro</h2>
-            </div class="wrapper">
-            <form method="post" action="" class="">
-                <div class="form-group">
-                    <label for="">Nome:</label>
-                    <input type="text" name="nome_aluno" class="" id="aluno" placeholder="Digite aqui.">
+            <div class=" col-lg-3 col-md-5 col-sm-12 cadast-form">
+                <div class="cadast-header">
+                    <h2>Cadastro</h2>
                 </div>
+                <form method="post" action="" class="">
+                    <div class="form-group">
+                        <label for="">Nome:</label>
+                        <input type="text" name="nome_aluno" class="form-control" id="aluno" placeholder="Digite aqui.">
+                    </div>
 
-                <div class="form-group">
-                    <label for="">E-mail:</label>
-                    <input type="text" name="email" class="" id="senha" placeholder="Digite seu e-mail.">
-                </div>
+                    <div class="form-group">
+                        <label for="">E-mail:</label>
+                        <input type="text" name="email" class="form-control" id="senha" placeholder="Digite seu e-mail.">
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Data Nasc:</label>
-                    <input type="date" name="data_nasc" class="" id="dt_nasc">
-                </div>
+                    <div class="form-group">
+                        <label for="">Data Nasc:</label>
+                        <input type="date" name="data_nasc" class="form-control" id="dt_nasc">
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Peso:</label>
-                    <input type="text">
-                </div>
+                    <div class="form-group">
+                        <label for="">Peso:</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Altura:</label>
-                    <input type="text">
-                </div>
+                    <div class="form-group">
+                        <label for="">Altura:</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                <button class="submit-cad">Cadastrar</button>
-            </form>
-        </div>
-
-        <div class="cadastro">
-            <div class="cadast-header">
-                <h2>Alunos Cadastrados:</h2>
+                    <button class="btn btn-primary submit-cad">Cadastrar</button>
+                </form>
             </div>
 
-            
-            <br>
-            <table id="tabela-cadastro">
-                <thead class="header-tabela">
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Data de Nascimento</th>
-                        <th>Peso</th>
-                        <th>Altura</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr>
-                        <th>Giovano</th>
-                        <th>giovaninho123@email.com</th>
-                        <th>01/12/2003</th>
-                        <th>93kg</th>
-                        <th>1,85</th>
-                    </tr>
-                    <tr>
-                        <th>Alfredo</th>
-                        <th>aluno2@email.com</th>
-                        <th>31/12/2000</th>
-                        <th>78kg</th>
-                        <th>1,75</th>
-                    </tr>
-                    <tr>
-                        <th>Aluno3</th>
-                        <th>aluno3@email.com</th>
-                        <th>10/10/1990</th>
-                        <th>70kg</th>
-                        <th>1,70</th>
-                    </tr>
-                    <tr>
-                        <th>Aluno4</th>
-                        <th>aluno4@email.com</th>
-                        <th>19/02/1940</th>
-                        <th>85kg</th>
-                        <th>1,78</th>
-                    </tr> -->
-                </tbody>
-            </table>
-        </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 cadastro">
+                <div class="cadast-header">
+                    <h2>Alunos Cadastrados:</h2>
+                </div>
 
+                <table id="tabela-cadastro" class="table">
+                    <thead class="header-tabela">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Data de Nascimento</th>
+                            <th>Peso</th>
+                            <th>Altura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aqui serão adicionados os dados dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </div>
 
     <br>
-    <div>
 
-    </div>
     <footer class="footer">
         Desenvolvido por Grupo de Desenvolvimento Web | Unisal - Lorena, 2024
     </footer>
@@ -173,33 +145,30 @@
                 }
             ];
 
-            console.log(data);
-
-
             $('#tabela-cadastro').DataTable({
                 language: {
-            emptyTable: "Nenhum registro encontrado",
-            info: "Mostrando de _START_ até _END_ de _TOTAL_ registros",
-            infoEmpty: "Mostrando 0 até 0 de 0 registros",
-            infoFiltered: "(Filtrados de _MAX_ registros)",
-            infoPostFix: "",
-            thousands: ".",
-            lengthMenu: "_MENU_ resultados por página",
-            loadingRecords: "Carregando...",
-            processing: "Processando...",
-            zeroRecords: "Nenhum registro encontrado",
-            search: "Pesquisar:",
-            paginate: {
-                next: "Próximo",
-                previous: "Anterior",
-                first: "Primeiro",
-                last: "Último"
-            },
-            aria: {
-                "sortAscending": ": Ordenar colunas de forma ascendente",
-                "sortDescending": ": Ordenar colunas de forma descendente"
-            }
-        },
+                    emptyTable: "Nenhum registro encontrado",
+                    info: "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    infoEmpty: "Mostrando 0 até 0 de 0 registros",
+                    infoFiltered: "(Filtrados de _MAX_ registros)",
+                    infoPostFix: "",
+                    thousands: ".",
+                    lengthMenu: "_MENU_ resultados por página",
+                    loadingRecords: "Carregando...",
+                    processing: "Processando...",
+                    zeroRecords: "Nenhum registro encontrado",
+                    search: "Pesquisar:",
+                    paginate: {
+                        next: "Próximo",
+                        previous: "Anterior",
+                        first: "Primeiro",
+                        last: "Último"
+                    },
+                    aria: {
+                        "sortAscending": ": Ordenar colunas de forma ascendente",
+                        "sortDescending": ": Ordenar colunas de forma descendente"
+                    }
+                },
                 data,
                 columns: [
                     { data: 'Nome' },
@@ -207,7 +176,6 @@
                     { data: 'Data_Nasc' },
                     { data: 'Peso' },
                     { data: 'Altura' }
-
                 ]
             });
         });
