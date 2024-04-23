@@ -13,6 +13,10 @@ body{
     background-color: #747474;
 }
 
+.container-fluid{
+    background-color: #747474;
+}
+
 .login-form {
     width: 300px;
     padding: 20px;
